@@ -1,0 +1,12 @@
+services:
+  construct_service:
+    build: .
+    ports:
+      - "5002:80"
+    volumes:
+      - .:/code
+
+networks:
+  default:
+    name: microsvcs
+    external: true

@@ -1,0 +1,221 @@
+{
+    "0": {        
+        "id": "ABF39A",
+        "userId": "ABF39A", 
+        "currentSize": [10,10], 
+        "maxSize": [15,15], 
+        "constructions" : [
+            {
+                "id": "001",
+                "posX": 1,
+                "posY": 1,
+                "hasPlant": true,
+                "plantId": "AAA",
+                "isBuilt": true,
+                "daysTillDone": 55,
+                "hp": 100,
+                "isWatered": true
+            },{
+                "id": "002",
+                "posX": 1,
+                "posY": 2,
+                "hasPlant": true,  
+                "plantId": "AAA",
+                "isBuilt": true, 
+                "daysTillDone": 55, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "003",
+                "posX": 1,
+                "posY": 3,
+                "hasPlant": true,  
+                "plantId":"AAA",
+                "isBuilt": true, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "004",
+                "posX": 2,
+                "posY": 1,
+                "hasPlant": true,  
+                "plantId":"AAA",
+                "isBuilt": true, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "005",
+                "posX": 2,
+                "posY": 2,
+                "hasPlant": true,  
+                "plantId":"AAA",
+                "isBuilt": true, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "006",
+                "posX": 2,
+                "posY": 3,
+                "hasPlant": true,  
+                "plantId":"AAA",
+                "isBuilt": true, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "007",
+                "posX": 3,
+                "posY": 1,
+                "hasPlant": true,  
+                "plantId":"AAA",
+                "isBuilt": true, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "008",
+                "posX": 3,
+                "posY": 2,
+                "hasPlant": true,  
+                "plantId":"AAA",
+                "isBuilt": true, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "009",
+                "posX": 3,
+                "posY": 3,
+                "hasPlant": true,  
+                "plantId":"AAA",
+                "isBuilt": true, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "002",
+                "posX": 5,
+                "posY": 5,
+                "hasPlant": true,  
+                "plantId": "BBB",
+                "isBuilt": true, 
+                "daysTillDone": 0, 
+                "hp": 100,
+                "isWatered": false
+            }
+            
+        ]
+    },
+    "1": {        
+        "id": "ABF39B",
+        "userId": "ABF39B", 
+        "currentSize": [5,5], 
+        "maxSize": [25,25], 
+        "constructions" : [
+            {
+                "id": "001",
+                "posX": 1,
+                "posY": 1,
+                "hasPlant": true,
+                "plantId": "002",
+                "isBuilt": true,
+                "daysTillDone": 5,
+                "hp": 100,
+                "isWatered": false
+            },{
+                "id": "001",
+                "posX": 1,
+                "posY": 2,
+                "hasPlant": true,  
+                "plantId": "001",
+                "isBuilt": true, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "001",
+                "posX": 1,
+                "posY": 3,
+                "hasPlant":1,  
+                "plantId":"",
+                "isBuilt": false, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "001",
+                "posX": 1,
+                "posY": 4,
+                "hasPlant":1,  
+                "plantId":"",
+                "isBuilt": false, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": true
+            }, {
+                "id": "001",
+                "posX": 1,
+                "posY": 5,
+                "hasPlant":1,  
+                "plantId":"",
+                "isBuilt": false, 
+                "daysTillDone": 5, 
+                "hp": 100,
+                "isWatered": false
+            },             {
+                "id": "001",
+                "posX": 3,
+                "posY": 1,
+                "hasPlant": true,
+                "plantId": "002",
+                "isBuilt": true,
+                "daysTillDone": 10,
+                "hp": 100,
+                "isWatered": false
+            },{
+                "id": "001",
+                "posX": 3,
+                "posY": 2,
+                "hasPlant": true,  
+                "plantId": "001",
+                "isBuilt": true, 
+                "daysTillDone": 10, 
+                "hp": 100,
+                "isWatered": false
+            }, {
+                "id": "001",
+                "posX": 3,
+                "posY": 3,
+                "hasPlant":1,  
+                "plantId":"",
+                "isBuilt": false, 
+                "daysTillDone": 10, 
+                "hp": 100,
+                "isWatered": false
+            }, {
+                "id": "001",
+                "posX": 3,
+                "posY": 4,
+                "hasPlant":1,  
+                "plantId":"",
+                "isBuilt": false, 
+                "daysTillDone": 10, 
+                "hp": 100,
+                "isWatered": false
+            }, {
+                "id": "001",
+                "posX": 3,
+                "posY": 5,
+                "hasPlant":1,  
+                "plantId":"",
+                "isBuilt": false, 
+                "daysTillDone": 10, 
+                "hp": 100,
+                "isWatered": false
+            }          
+        ]
+    }
+}

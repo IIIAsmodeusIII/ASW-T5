@@ -1,0 +1,15 @@
+services:
+  render_service:
+    build: .
+    ports:
+      - "5001:80"
+    volumes:
+      - .:/code
+  render_service_logs:
+    build: .
+    command: python ./src/logger.py
+
+networks:
+  default:
+    name: microsvcs
+    external: true
