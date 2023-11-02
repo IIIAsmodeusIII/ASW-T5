@@ -1,0 +1,12 @@
+services:
+  login_service:
+    build: .
+    ports:
+      - "5003:80"
+    volumes:
+      - .:/code
+
+networks:
+  default:
+    name: microsvcs
+    external: true

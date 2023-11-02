@@ -4,6 +4,9 @@
 1. Constanza Alvarado Valenzuela | 201975521-7
 2. Bruno Vega Pizarro | 201854051-k
 
+## API REST
+1. https://domainName/farms/id - Devuelve un arreglo de bytes en forma de imagen png correspondiente a la granja del usuario
+
 ## Instrucciones de ejecución:
 1. Instalar requisitos: Python 3.7+, uvicorn, fastapi, pillow.
 2. Ejecutar: python -m uvicorn main:app --reload

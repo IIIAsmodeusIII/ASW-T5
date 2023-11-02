@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import json
 import io
 import logging
+import requests
 
 from PIL import Image
 from .logger import Log
@@ -41,24 +42,25 @@ for _, tile_name in TILE_TRANSFORM:
 
 
 ## Server ##
+targetConstructionServiceUrl = "http://construct_service/users/"
 @app.get("/farms/")
 def read_root():
-    return {"API": "Farm"}
+    images = []
+    response = requests.get(targetConstructionServiceUrl)
+    data     = json.loads(response.content.decode())
+    users    = data["users"]
 
-@app.get("/farms/{id}",  
-    responses = {
-        200: {
-            "content": {"image/png": {}}
-        }
-    },
-    response_class=Response
-)
+    for _, user in users.items():
+        image = getFarm(user)
+        images.append(image.decode())
+
+    return {"FarmsImages": "Mundo"}
+
+@app.get("/farms/{id}")
 def farm(id: str):
 
-    ## Get image ##
-    data = requestConstructionAPI(id)
-
-    ## Parse it into bytes ##
+    response = requests.get(targetConstructionServiceUrl + f"{id}")
+    data     = json.loads(response.content.decode())    
     imageBytes = getFarm(data)
 
     ## Send it ##
@@ -83,37 +85,36 @@ def requestConstructionAPI(id=None):
 ### Farm dict to ImageArray ###
 def getFarm(farm):
 
-    ## Get data ##
-    HEIGHT = farm["expansion_actual"][0]
-    WIDTH = farm["expansion_actual"][1]
-    
-    MAX_HEIGHT = farm["expansion_maxima"][0]
-    MAX_WIDTH = farm["expansion_maxima"][1]
+    print(farm)
 
-    buildings = farm["construcciones"]
+    ## Get data ##
+    HEIGHT = farm["currentSize"][0]
+    WIDTH = farm["currentSize"][1]
+    
+    MAX_HEIGHT = farm["maxSize"][0]
+    MAX_WIDTH = farm["maxSize"][1]
 
     ## Make data structure of farm ##
     dataset = np.zeros((MAX_HEIGHT, MAX_WIDTH))
     dataset[MAX_HEIGHT-HEIGHT:, 0:WIDTH] = 1
-    for position, build in buildings.items():
-        coordinates = position.split(",")
-        x = int(coordinates[0].strip())
-        y = int(coordinates[1].strip())
+    for construction in farm["constructions"]:
+        x = int(construction["posX"])
+        y = int(construction["posY"])
 
         temp = 0
-        if(build["readyToPlant"] == 1):
+        if(construction["isBuilt"] == 1):
             temp = 2
 
-        if(build["hasPlant"] == 1 and build["grownDays"] in [0, 1]):
-            temp = 3
-
-        if(build["hasPlant"] == 1 and build["grownDays"] > 1):
-            temp = 4
-
-        if(build["hasPlant"] == 1 and build["daysTillDone"] == 0):
+        if(construction["hasPlant"] == 1 and construction["daysTillDone"] == 0):
             temp = 5
 
-        if(build["isWatered"] == 1):
+        if(construction["hasPlant"] == 1 and construction["daysTillDone"] >= 1):
+            temp = 4
+
+        if(construction["hasPlant"] == 1 and construction["daysTillDone"] >= 5):
+            temp = 3
+
+        if(construction["isWatered"] == 1):
             temp += 4
 
         dataset[MAX_HEIGHT-y-1][x] = temp
